@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Student(models.Model):
+    image = models.ImageField(upload_to='students/', null=True, blank=True)
     name = models.CharField(max_length=20)
     course = models.CharField(max_length=30)
     age = models.IntegerField()
@@ -14,6 +15,8 @@ class Student(models.Model):
         ],
         default='Male',
     )
+    date = models.DateField(null=True)
+
 
 
     def __str__(self):
